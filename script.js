@@ -10,11 +10,16 @@ var currentTime; //For getting the current Time + Timezone
 $(function () {  //shorthand for $(document).ready(function()
   //Adds a click event listener to all elements with the class "savBtn"
   $(".saveBtn").on("click", function () {
-    console.log("save button clicked")
+    console.log("save button clicked");
     var timeId = $(this).parent().attr('id'); //to grab the time that we want, uses parent() method to up to the parent element
     var descriptionId = $(this).siblings(".description").val(); // grab the description, uses the siblings element that have the class description
     //cannot use .children() because it is not a direct chold of the savBtn.children
     localStorage.setItem(timeId, descriptionId); //saves the time and description to local storage.
+  });
+
+  $("#clear").on("click",function () {
+   console.log("Clear button clicked");
+   localStorage.clear();
   });
 
 //Function that will apply past,present and future classes to each time block   
