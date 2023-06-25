@@ -34,10 +34,13 @@ $(function () {  //shorthand for $(document).ready(function()
     
     if (timeGetHours < getTime) { //checks if the current time (getTime) is greater than the time for time-blocks and if so apply past
       $(this).removeClass("present future").addClass("past");
+      console.log("past applied");
     } else if (timeGetHours > getTime) { //if the current time is less than the time block it means the time block is in the future 
       $(this).removeClass("past present").addClass("future"); 
+      console.log("future applied")
     } else {
-      $(this).removeClass("past future").addClass("present"); //applies present class 
+      $(this).removeClass("past future").addClass("present"); //applies present class
+      console.log("present applied") 
     }
 });
     
