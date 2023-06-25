@@ -42,13 +42,6 @@ $(function () {  //shorthand for $(document).ready(function()
     } else {
       $(this).removeClass("past future").addClass("present");
     }
-    
-    // Additional if statement for 8 PM
-    if (timeGetHours === 20) {
-      $(this).removeClass("past present").addClass("future");
-    }
-      
-    
 });
     
   }
