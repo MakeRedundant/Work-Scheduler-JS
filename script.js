@@ -20,6 +20,7 @@ $(function () {  //shorthand for $(document).ready(function()
   $("#clear").on("click",function () {
    console.log("Clear button clicked");
    localStorage.clear();
+   location.reload();
   });
 
 //Function that will apply past,present and future classes to each time block   
