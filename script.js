@@ -26,8 +26,7 @@ $(function () {
   //Function that will apply past,present and future classes to each time block
   function checkTime() {
     var getTime = dayjs().format("H"); //use dayjs to get current time
-    $(".time-block").each(function () {
-      //uses .each() method to iterate over each class time-block variable
+    $(".time-block").each(function () { //uses .each() method to iterate over each class time-block variable
       var timeBlock = $(this).attr("id"); //retrieves the ID of the current time and assigns it to the timeBlock variable.
       var timeGetHours = parseInt($(this).attr("id").split("-")[1]); // extracts the hour by splitting the the ID string and prasing it as an integer
       var descriptionId = localStorage.getItem(timeBlock);
@@ -39,16 +38,16 @@ $(function () {
         $(this).find(".description").val(descriptionId);
       }
 
-      if (timeGetHours < getTime) {
-        //checks if the current time (getTime) is greater than the time for time-blocks and if so apply past
-        $(this).removeClass("present future").addClass("past");
+      if (timeGetHours > getTime) {
+        //checks if the current time (getTime) is less than the time for time-blocks and if so apply past
+        $(this).removeClass("present future").addClass("past"); //past gray color
         console.log("past applied");
-      } else if (timeGetHours > getTime) {
-        //if the current time is less than the time block it means the time block is in the future
+      } else if (timeGetHours < getTime) {
+        //if the current time is greater than the time block it means the time block is in the future (green color)
         $(this).removeClass("past present").addClass("future");
         console.log("future applied");
       } else {
-        $(this).removeClass("past future").addClass("present"); //applies present class otherwise
+        $(this).removeClass("past future").addClass("present"); //applies present class otherwise (red color)
         console.log("present applied");
       }
     });
