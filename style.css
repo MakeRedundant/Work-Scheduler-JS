@@ -57,3 +57,16 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+
+.btn-clear {
+  border-radius: 10px; /* Sets the border radius to create rounded corners */
+  color: white; /* Sets the text color to white */
+  background-color: black; /* Sets the background color to black */
+  padding: 10px 20px; /* Adds some padding around the text */
+  border: none; /* Removes the border */
+  cursor: pointer; /* Adds a pointer cursor on hover */
+}
+
+.btn-clear:hover {
+  background-color: gray; /* Changes the background color on hover */
+}
