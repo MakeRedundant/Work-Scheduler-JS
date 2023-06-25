@@ -46,7 +46,7 @@ $(function () {  //shorthand for $(document).ready(function()
       $(this).removeClass("past present").addClass("future"); 
       console.log("future applied")
     } else {
-      $(this).removeClass("past future").addClass("present"); //applies present class
+      $(this).removeClass("past future").addClass("present"); //applies present class otherwise
       console.log("present applied") 
     }
 });
@@ -54,6 +54,8 @@ $(function () {  //shorthand for $(document).ready(function()
   }
 //Initlise 
   checkTime(); //putting the function inside the block ensures it is called one everything is ready
+
+  //Current Date and time for the header
   var currentDate = dayjs().format("dddd, MMMM D, YYYY"); 
   $("#currentDay").text(currentDate);
 
