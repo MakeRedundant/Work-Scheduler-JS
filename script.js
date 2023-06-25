@@ -1,6 +1,3 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 //Global variables
 
 var timeId; // For getting the time 
@@ -8,7 +5,7 @@ var descriptionId; // For getting the text description
 var currentDate; //For getting the current Date 
 var currentTime; //For getting the current Time + Timezone 
 
-//Initilise 
+
 
 $(function () {  //shorthand for $(document).ready(function()
   //Adds a click event listener to all elements with the class "savBtn"
@@ -35,18 +32,18 @@ $(function () {  //shorthand for $(document).ready(function()
       $(this).find(".description").val(descriptionId);
     }
     
-    if (timeGetHours < getTime) {
+    if (timeGetHours < getTime) { //checks if the current time (getTime) is greater than the time for time-blocks and if so apply past
       $(this).removeClass("present future").addClass("past");
-    } else if (timeGetHours > getTime) {
-      $(this).removeClass("past present").addClass("future");
+    } else if (timeGetHours > getTime) { //if the current time is less than the time block it means the time block is in the future 
+      $(this).removeClass("past present").addClass("future"); 
     } else {
-      $(this).removeClass("past future").addClass("present");
+      $(this).removeClass("past future").addClass("present"); //applies present class 
     }
 });
     
   }
-
-  checkTime();
+//Initlise 
+  checkTime(); //putting the function inside the block ensures it is called one everything is ready
     
  
   var currentDate = dayjs().format("dddd, MMMM D, YYYY"); 
