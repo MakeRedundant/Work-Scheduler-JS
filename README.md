@@ -21,5 +21,5 @@ https://makeredundant.github.io/Work-Scheduler-JS/
 Brian Trang with thanks to USYD
 ## License 
 Please refer to the license in the repository.
-You are required to submit the following for review:
+
 
