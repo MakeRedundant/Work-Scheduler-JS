@@ -17,10 +17,11 @@ $(function () {  //shorthand for $(document).ready(function()
     localStorage.setItem(timeId, descriptionId); //saves the time and description to local storage.
   });
 
+  //Adds a click event listener to the clear button 
   $("#clear").on("click",function () {
    console.log("Clear button clicked");
-   localStorage.clear();
-   location.reload();
+   localStorage.clear(); //clears local storage
+   location.reload(); // reloads the page to view changes 
   });
 
 //Function that will apply past,present and future classes to each time block   
@@ -53,8 +54,6 @@ $(function () {  //shorthand for $(document).ready(function()
   }
 //Initlise 
   checkTime(); //putting the function inside the block ensures it is called one everything is ready
-    
- 
   var currentDate = dayjs().format("dddd, MMMM D, YYYY"); 
   $("#currentDay").text(currentDate);
 
