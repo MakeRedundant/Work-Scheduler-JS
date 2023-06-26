@@ -38,17 +38,17 @@ $(function () {
         $(this).find(".description").val(descriptionId);
       }
 
-      if (timeGetHours > getTime) {
+      if (timeGetHours < getTime) {
         //checks if the current time (getTime) is less than the time for time-blocks and if so apply past
-        $(this).removeClass("present future").addClass("past"); //past gray color
+        $(this).removeClass("present future").addClass("past"); //past gray colour
         console.log("past applied");
-      } else if (timeGetHours < getTime) {
-        //if the current time is greater than the time block it means the time block is in the future (green color)
-        $(this).removeClass("past present").addClass("future");
-        console.log("future applied");
-      } else {
-        $(this).removeClass("past future").addClass("present"); //applies present class otherwise (red color)
+      } else if (timeGetHours == getTime) {
+        // If the current time is equal to the time for the time block, it means the time block is in the present. (red colour)
+        $(this).removeClass("past future").addClass("present");
         console.log("present applied");
+      } else {
+        $(this).removeClass("past present").addClass("future"); // If neither of the above conditions is true, it means the current time is greater than the time for the time block,
+        console.log("future applied");  // // In this case, the class "future" is added to the time block, removing any existing "past" or "present" classes. (green colour)
       }
     });
   }
